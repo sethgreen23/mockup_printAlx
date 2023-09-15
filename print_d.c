@@ -1,0 +1,46 @@
+#include "header.h"
+/**
+ * print_d - print a decimal number
+ * @n: number ot convert
+ *
+ * Return: number length
+ */
+int print_d(int n)
+{
+	int isNegative, i, count, j, temp;
+	char buffer[32];
+
+	i = 0, isNegative = 0, count = 0;
+	if (n == INT_MIN)
+	{
+		write(1, "-2147483648", _strlen("-2147483648"));
+		return (_strlen("-2147483648"));
+	}
+	if (n < 0)
+	{
+		n = -n;
+		isNegative = 1;
+	}
+	do {
+		buffer[i++] = n % 10 + '0';
+	       	count++;
+		n /= 10;	
+	} while (n > 0);
+	if(isNegative)
+	{
+		buffer[i++] = '-';
+		count++;	
+	}
+	buffer[i] = '\0';
+	for (j = 0; j < i / 2; j++)
+	{
+		temp = buffer[j];
+		buffer[j] = buffer[i - j - 1];
+		buffer[i - j - 1] = temp;
+	}
+	for (j = 0; buffer[j] != '\0'; j++)
+	{
+		write(1, &buffer[j], 1);
+	}
+	return (count);
+}

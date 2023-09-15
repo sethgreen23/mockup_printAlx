@@ -47,7 +47,7 @@ int _printf(const char *format, ...)
 				len = print_s(str);
 				printed += len;
 			}
-			else if (*format == 'd')
+			else if (*format == 'd' || *format == 'i')
 			{
 				int n = va_arg(lst, int);
 				len = print_d(n);

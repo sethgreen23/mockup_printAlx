@@ -31,5 +31,13 @@ int main(void)
 	printf("Length [%d]\n", n);
 	n = printf("%i\n", 0x12);/* %i */
 	printf("Length [%d]\n", n);
+	n = print_b(18);
+	printf("\nLength [%d]\n", n);
+	n = print_b(10);
+	printf("\nLength [%d]\n", n);
+	n = print_b(20);
+	printf("\nLength [%d]\n", n);
+	n = print_b(3);
+	printf("\nLength [%d]\n", n);
 	return (0);
 }

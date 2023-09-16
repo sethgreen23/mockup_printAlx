@@ -53,6 +53,12 @@ int _printf(const char *format, ...)
 				len = print_d(n);
 				printed += len;
 			}
+			else if (*format == 'b')
+			{
+				int n = va_arg(lst, int);
+				len = print_b(n);
+				printed += len;
+			}
 			
 		}
 		format++;

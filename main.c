@@ -39,5 +39,7 @@ int main(void)
 	printf("\nLength [%d]\n", n);
 	n = print_b(3);
 	printf("\nLength [%d]\n", n);
+	n = _printf("%o\n", 150);
+	printf("%d\n", n);
 	return (0);
 }

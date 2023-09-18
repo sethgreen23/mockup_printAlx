@@ -59,7 +59,12 @@ int _printf(const char *format, ...)
 				len = print_b(n);
 				printed += len;
 			}
-			
+			else if (*format == 'o')
+			{
+				int n = va_arg(lst, int);
+				len = print_o(n);
+				printed += len;
+			}
 		}
 		format++;
 	}

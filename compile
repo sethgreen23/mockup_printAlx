@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 print_d.c print_b.c print_s.c _printf.c main.c -o prog
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 print_d.c print_b.c print_s.c task3.c _printf.c main.c -o prog

@@ -21,5 +21,5 @@ int print_o(unsigned int n);
 unsigned int print_u(int n);
 int print_hexa(unsigned int n, char x);
 char print_hc(int n, char x);
-
+int print_S(va_list lst);
 #endif

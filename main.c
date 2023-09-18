@@ -26,9 +26,9 @@ int main(void)
 	printf("[length: %d]\n", n);
 	n = _printf("%X\n", INT_MAX);
 	printf("[length: %d]\n", n);
-	n = _printf("%x\n", INT_MIN);
+	n = _printf("%x\n", 4294967295);
 	printf("[length: %d]\n", n);
-	n = _printf("%X\n", INT_MIN);
+	n = _printf("%X\n", 4294967295);
 	printf("[length: %d]\n", n);
 	return (0);
 }

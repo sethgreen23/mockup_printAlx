@@ -1,4 +1,4 @@
-#include "header.h"
+#include "main.h"
 
 /**
  * print_o - pirnt octal number
@@ -28,4 +28,39 @@ int print_o(unsigned int n)
 		write(1, &buffer[j], 1);
 	}
 	return (count);
+}
+
+/**
+ * print_u - print unsigned number
+ * @n: decimal number
+ * Return: number of digits
+ **/
+unsigned int print_u(int n)
+{
+	unsigned int maxValue = 4294967295;
+	unsigned int value;
+	int i, j, temp;
+	char buffer[32];
+
+	i = 0;
+	if (n < 0)
+		value = maxValue + n + 1;
+	else if (n >= 0)
+		value = n;
+	do {
+		buffer[i++] = value % 10 + '0';
+		value = value / 10;
+	} while (value > 0);
+	buffer[i] = '\0';
+	/*printf("%s\n", buffer);*/
+	for (j = 0; j < i / 2; j++)
+	{
+		temp = buffer[i - j - 1];
+		buffer[i - j - 1] = buffer[j];
+		buffer[j] = temp;
+	}
+	/*printf("\n");*/
+	for (j = 0; j < i; j++)
+	write(1, &buffer[j], 1);
+	return (i);
 }

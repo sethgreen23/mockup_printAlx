@@ -1,4 +1,4 @@
-#include "header.h"
+#include "main.h"
 /**
  * print_d - print a decimal number
  * @n: number ot convert
@@ -23,13 +23,13 @@ int print_d(int n)
 	}
 	do {
 		buffer[i++] = n % 10 + '0';
-	       	count++;
-		n /= 10;	
+		count++;
+		n /= 10;
 	} while (n > 0);
-	if(isNegative)
+	if (isNegative)
 	{
 		buffer[i++] = '-';
-		count++;	
+		count++;
 	}
 	buffer[i] = '\0';
 	for (j = 0; j < i / 2; j++)

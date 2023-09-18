@@ -1,14 +1,14 @@
-#include "header.h"
+#include "main.h"
 /**
  * print_b - print binary
  * @n: integer
  *
  * Return: binary number
  */
-int print_b(int n)
+int print_b(unsigned int n)
 {
 	int i, count, j, temp;
-	char buffer[32];
+	char buffer[100];
 
 	i = 0, count = 0;
 	do {

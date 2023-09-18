@@ -7,7 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int printed, len;
+	int printed;
 	va_list lst;
 
 	printed = 0;
@@ -16,54 +16,18 @@ int _printf(const char *format, ...)
 		return (-1);
 	while(*format)
 	{
-		if (*format != '%') /*if character is not a %*/
+		if (*format != '%')
 		{
 			write(1, format, 1);
 			printed++;
 		}
 		else
 		{
-			/**
-			 * how many cases there is?
-			 * - % if it is a printf it
-			 * - c print the caracter
-			 * - s print the string
-			 */
-			format++; /* skip to the next character*/
-			if (*format == '%')
-			{
-				write(1, format, 1);
-				printed++;
-			}
-			else if (*format == 'c')
-			{
-				char character = va_arg(lst, int);
-				write(1,&character, 1);
-			       	printed++;	
-			}
-			else if (*format == 's')
-			{
-				char *str = va_arg(lst, char *);
-				len = print_s(str);
-				printed += len;
-			}
-			else if (*format == 'd' || *format == 'i')
-			{
-				int n = va_arg(lst, int);
-				len = print_d(n);
-				printed += len;
-			}
-			else if (*format == 'b')
-			{
-				int n = va_arg(lst, int);
-				len = print_b(n);
-				printed += len;
-			}
-			
+			format++;
+			printed = (switch_op(format, lst, printed));
 		}
 		format++;
 	}
-	
 	va_end(lst);
 	return (printed);
 }

@@ -7,7 +7,7 @@
  */
 int print_b(int n)
 {
-	int i, count, j, temp, zero_pad;
+	int i, count, j, temp;
 	char buffer[32];
 
 	i = 0, count = 0;
@@ -16,16 +16,6 @@ int print_b(int n)
 		count++;
 		n /= 2;
 	} while (n > 0);
-	zero_pad = 4 - (i % 4); /*detect how many zero left pad*/
-	if (zero_pad < 4)
-	{
-		while (zero_pad)
-		{
-			buffer[i++] = '0';
-			count++;
-			--zero_pad;
-		}
-	}
 	buffer[i] = '\0';
 	for (j = 0; j < i / 2; j++)
 	{

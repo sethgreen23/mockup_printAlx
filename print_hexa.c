@@ -24,7 +24,7 @@ char print_hc(int n, char x)
  * @x: The specifier
  * Return: count
  */
-int print_hexa(unsigned int n, char x)
+int print_hexa(unsigned int n, char x, char *global_buffer, int *index)
 {
 	int i, count, j, temp;
 	char buffer[100];
@@ -47,7 +47,7 @@ int print_hexa(unsigned int n, char x)
 	}
 	for (j = 0; buffer[j] != '\0'; j++)
 	{
-		write(1, &buffer[j], 1);
+		store_character(global_buffer, index, buffer[j]);
 	}
 	return (count);
 }

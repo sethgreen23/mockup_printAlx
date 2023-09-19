@@ -5,7 +5,7 @@
  * @n: Unsigned decimal
  * Return: count
  */
-int print_o(unsigned int n)
+int print_o(unsigned int n, char *global_buffer, int *index)
 {
 	int i, count, j, temp;
 	char buffer[100];
@@ -25,7 +25,7 @@ int print_o(unsigned int n)
 	}
 	for (j = 0; buffer[j] != '\0'; j++)
 	{
-		write(1, &buffer[j], 1);
+		store_character(global_buffer, index, buffer[j]);
 	}
 	return (count);
 }
@@ -35,7 +35,7 @@ int print_o(unsigned int n)
  * @n: decimal number
  * Return: number of digits
  **/
-unsigned int print_u(int n)
+unsigned int print_u(int n, char *global_buffer, int *index)
 {
 	unsigned int maxValue = 4294967295;
 	unsigned int value;
@@ -61,6 +61,6 @@ unsigned int print_u(int n)
 	}
 	/*printf("\n");*/
 	for (j = 0; j < i; j++)
-	write(1, &buffer[j], 1);
+		store_character(global_buffer, index, buffer[j]);
 	return (i);
 }

@@ -20,16 +20,17 @@ int _strlen(char *s)
  *
  * Return: length of string
  */
-int print_s(char *str)
+int print_s(char *str, char *buffer, int *index)
 {
 	int len;
+	char *nullStr = "(null)";
 
 	if (str == NULL)
 	{
-		write(1, "(null)", 6);
+		store_string(buffer, index, nullStr);
 		return (6);
 	}
 	len = _strlen(str);
-	write(1, str, len);
+	store_string(buffer, index, str);
 	return (len);
 }

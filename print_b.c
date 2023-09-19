@@ -2,7 +2,8 @@
 /**
  * print_b - print binary
  * @n: integer
- *
+ * @global_buffer: buffer
+ * @index: index
  * Return: binary number
  */
 int print_b(unsigned int n, char *global_buffer, int *index)

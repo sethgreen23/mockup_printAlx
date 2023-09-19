@@ -2,10 +2,12 @@
 
 /**
  * print_S - print string
- * @lst: ...
+ * @lst: the string
+ * @buffer: buffer
+ * @index: index
  * Return: length of printed characters
  */
-int print_S(va_list lst)
+int print_S(va_list lst, char *buffer, int *index)
 {
 	char zero = '0';
 	char *str = va_arg(lst, char *);
@@ -27,7 +29,7 @@ int print_S(va_list lst)
 				write(1, &zero, 1);
 				len++;
 			}
-			len += print_hexa(*str, 'X');
+			len += print_hexa(*str, 'X', buffer, index);
 		}
 		else
 		{

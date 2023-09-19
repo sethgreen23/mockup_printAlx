@@ -3,6 +3,8 @@
 /**
  * print_o - pirnt octal number
  * @n: Unsigned decimal
+ * @global_buffer: buffer
+ * @index: index
  * Return: count
  */
 int print_o(unsigned int n, char *global_buffer, int *index)
@@ -33,6 +35,8 @@ int print_o(unsigned int n, char *global_buffer, int *index)
 /**
  * print_u - print unsigned number
  * @n: decimal number
+ * @global_buffer: buffer
+ * @index: index
  * Return: number of digits
  **/
 unsigned int print_u(int n, char *global_buffer, int *index)

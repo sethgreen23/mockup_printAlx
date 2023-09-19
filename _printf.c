@@ -4,7 +4,8 @@
  * choose_func - choose the specifier
  * @ch: specifier
  * @lst: list of arguments
- *
+ * @buffer: buffer
+ * @index: index
  * Return: Number of characters printed
  */
 int choose_func(char ch, va_list lst, char *buffer, int *index)
@@ -39,7 +40,7 @@ int choose_func(char ch, va_list lst, char *buffer, int *index)
 	}
 	else if (ch == 'S')
 	{
-		printed = print_S(lst);
+		printed = print_S(lst, buffer, index);
 	}
 	else if (ch == 'x' || ch == 'X')
 	{

@@ -22,6 +22,8 @@ char print_hc(int n, char x)
  * print_hexa - print hexadecimal number
  * @n: unsigned decimal number
  * @x: The specifier
+ * @global_buffer: buffer
+ * @index: index
  * Return: count
  */
 int print_hexa(unsigned int n, char x, char *global_buffer, int *index)

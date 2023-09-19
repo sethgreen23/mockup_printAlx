@@ -8,7 +8,7 @@ int main(void)
 {
 	int n;
 
-	n = _printf("%x\n", 0)i;
+	n = _printf("%x\n", 0);
 	printf("%d [length: %d]\n", 0, n);
 	n = _printf("%x\n", 100);
 	printf("%d [length: %d]\n", 100, n);

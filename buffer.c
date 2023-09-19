@@ -11,8 +11,9 @@ void empty_buffer(char *buffer, int *index)
 	write(1, buffer, BUFFER_SIZE);
 	*index = 0;
 }
+
 /**
- * print_character - print one caracter at a time
+ * store_character - print one caracter at a time
  * @buffer: buffer array
  * @index: index
  * @chr: character

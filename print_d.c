@@ -2,7 +2,8 @@
 /**
  * print_d - print a decimal number
  * @n: number ot convert
- *
+ * @global_buffer: buffer
+ * @index: index
  * Return: number length
  */
 int print_d(int n, char *global_buffer, int *index)

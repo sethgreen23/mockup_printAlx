@@ -5,7 +5,7 @@
  *
  * Return: number length
  */
-int print_d(int n)
+int print_d(int n, char *global_buffer, int *index)
 {
 	int isNegative, i, count, j, temp;
 	char buffer[32];
@@ -40,7 +40,7 @@ int print_d(int n)
 	}
 	for (j = 0; buffer[j] != '\0'; j++)
 	{
-		write(1, &buffer[j], 1);
+		store_character(global_buffer, index, buffer[j]);
 	}
 	return (count);
 }

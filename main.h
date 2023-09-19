@@ -27,4 +27,5 @@ void empty_buffer(char *buffer, int *index);
 void store_character(char *buffer, int *index, char chr);
 void print_buffer(char *buffer, int *index);
 void store_string(char *buffer, int *index, char *str);
+int print_S(va_list lst);
 #endif
